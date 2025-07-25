@@ -1,0 +1,20 @@
+App name: Todo App
+
+++++++++++++++Models++++++++++++++++++
+User-
+email, password(Apply bcrypt)
+Todo-
+task, status, userId
+
++++++++++++++++Routes+++++++++++++++++++
+User Routes-
+POST    /api/users/register
+POST    /ap/users/login
+Todo Routes-
+GET     /api/todos/:userId
+POST    /api/todos
+PATCH   /api/todos/:todoId
+DELETE  /api/todos/:todoId
+
+++++++++++++++Controller+++++++++++++++++
+Register, Login, addTodo, getTodos, updateTodo, deleteTodo
