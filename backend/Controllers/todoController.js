@@ -2,7 +2,7 @@ import todoModel from "../Models/todoModel.js";
 
 const getTodos = async (req, res) => {
   try {
-    const todo = await todoModel.findById({ userID: req.user.id });
+    const todo = await todoModel.find({ userId: req.user.id });
     res.json(todo);
   } catch (error) {
     console.log(error);

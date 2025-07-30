@@ -7,7 +7,7 @@ const { SECRET_KEY } = process.env;
 
 const authentication = async (req, res, next) => {
   try {
-    const header = req.headers.authentication;
+    const header = req.headers.authorization;
     if (!header) {
       res.status(400).json({ message: "Not authorized, token failed" });
     }
@@ -15,7 +15,7 @@ const authentication = async (req, res, next) => {
     const decoded = jwt.verify(token, SECRET_KEY);
 
     // We attach the user object to the request, excluding the password
-    req.user = await userModel.findById(decoded._id).select("-password");
+    req.user = await userModel.findById(decoded.id).select("-password");
     next();
   } catch (error) {
     console.log(error);

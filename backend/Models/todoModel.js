@@ -15,4 +15,4 @@ const todoSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.Model("Todo", todoSchema);
+export default mongoose.model("Todo", todoSchema);

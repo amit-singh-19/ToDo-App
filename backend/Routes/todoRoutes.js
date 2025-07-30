@@ -9,7 +9,7 @@ import authentication from "../middlewares/auth.js";
 
 const router = express.Router();
 
-router.get("/", authentication, getTodo);
+router.get("/", authentication, getTodos);
 router.post("/", authentication, createTodo);
 router.patch("/:id", authentication, updateTodo);
 router.delete("/:id", authentication, deleteTodo);
